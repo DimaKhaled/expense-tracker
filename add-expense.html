@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense - Expense Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                💰 Expense Tracker
+            </a>
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li><a href="add-expense.html" class="active">➕ Add Expense</a></li>
+                <li><a href="expenses.html">📋 All Expenses</a></li>
+                <li><a href="reports.html">📊 Reports</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>Add New Expense</h1>
+            <p>Track your spending to stay on budget</p>
+        </div>
+
+        <!-- Add Expense Form -->
+        <div class="card" style="max-width: 700px; margin: 0 auto 25px auto;">
+            <div class="card-header">
+                <h2>📝 Expense Details</h2>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amount">Amount ($) *</label>
+                            <input type="number" id="amount" step="0.01" placeholder="0.00" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category">Category *</label>
+                            <select id="category" required>
+                                <option value="">Select Category</option>
+                                <option value="food">🍔 Food</option>
+                                <option value="transport">🚗 Transport</option>
+                                <option value="entertainment">🎬 Entertainment</option>
+                                <option value="bills">💡 Bills</option>
+                                <option value="shopping">🛒 Shopping</option>
+                                <option value="health">🏥 Health</option>
+                                <option value="education">📚 Education</option>
+                                <option value="other">📦 Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date *</label>
+                        <input type="date" id="date" value="2026-02-16" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" placeholder="What did you spend on? (Optional)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" placeholder="Add any additional notes... (Optional)"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        ➕ Add Expense
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Quick Add Section -->
+        <div class="card" style="max-width: 900px; margin: 0 auto 25px auto;">
+            <div class="card-header">
+                <h2>⚡ Quick Add</h2>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-2">Add common expenses with one click</p>
+                <div class="quick-add-grid">
+                    <div class="quick-add-btn">
+                        <div class="icon">☕</div>
+                        <div class="label">Coffee</div>
+                        <div class="amount">$5.00</div>
+                    </div>
+                    <div class="quick-add-btn">
+                        <div class="icon">🍕</div>
+                        <div class="label">Lunch</div>
+                        <div class="amount">$15.00</div>
+                    </div>
+                    <div class="quick-add-btn">
+                        <div class="icon">⛽</div>
+                        <div class="label">Gas</div>
+                        <div class="amount">$50.00</div>
+                    </div>
+                    <div class="quick-add-btn">
+                        <div class="icon">🍿</div>
+                        <div class="label">Movie</div>
+                        <div class="amount">$20.00</div>
+                    </div>
+                    <div class="quick-add-btn">
+                        <div class="icon">🚕</div>
+                        <div class="label">Taxi</div>
+                        <div class="amount">$25.00</div>
+                    </div>
+                    <div class="quick-add-btn">
+                        <div class="icon">🛒</div>
+                        <div class="label">Groceries</div>
+                        <div class="amount">$100.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recently Added -->
+        <div class="card" style="max-width: 900px; margin: 0 auto;">
+            <div class="card-header">
+                <h2>🕒 Recently Added</h2>
+            </div>
+            <div class="card-body">
+                <ul class="activity-list">
+                    <li class="activity-item">
+                        <span class="activity-icon">🍔</span>
+                        <span class="activity-text">
+                            <strong>Lunch at Italian Restaurant</strong> - Food
+                            <span class="activity-amount">-$45.00</span>
+                        </span>
+                        <span class="activity-time">2 minutes ago</span>
+                    </li>
+                    <li class="activity-item">
+                        <span class="activity-icon">🚗</span>
+                        <span class="activity-text">
+                            <strong>Gas Station</strong> - Transport
+                            <span class="activity-amount">-$55.00</span>
+                        </span>
+                        <span class="activity-time">1 hour ago</span>
+                    </li>
+                    <li class="activity-item">
+                        <span class="activity-icon">🎬</span>
+                        <span class="activity-text">
+                            <strong>Movie Tickets</strong> - Entertainment
+                            <span class="activity-amount">-$35.00</span>
+                        </span>
+                        <span class="activity-time">Yesterday</span>
+                    </li>
+                </ul>
+                <div class="text-center mt-2">
+                    <a href="expenses.html" class="btn btn-secondary">View All Expenses</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Card -->
+        <div class="card" style="max-width: 900px; margin: 25px auto 0 auto;">
+            <div class="alert alert-info">
+                <strong>💡 Pro Tip:</strong> Track every expense, no matter how small! Small purchases add up quickly and can significantly impact your budget.
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple JavaScript for Mobile Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

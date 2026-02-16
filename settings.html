@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Expense Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                💰 Expense Tracker
+            </a>
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li><a href="add-expense.html">➕ Add Expense</a></li>
+                <li><a href="expenses.html">📋 All Expenses</a></li>
+                <li><a href="reports.html">📊 Reports</a></li>
+                <li><a href="settings.html" class="active">⚙️ Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>Settings</h1>
+            <p>Customize your expense tracker preferences</p>
+        </div>
+
+        <!-- Category Management -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📁 Category Management</h2>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-2">Add, edit, or remove expense categories</p>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Icon</th>
+                                <th>Category Name</th>
+                                <th>Color</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-size: 1.5em;">🍔</td>
+                                <td>Food</td>
+                                <td><span class="category-badge category-food">Preview</span></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.85em;">Edit</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 1.5em;">🚗</td>
+                                <td>Transport</td>
+                                <td><span class="category-badge category-transport">Preview</span></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.85em;">Edit</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 1.5em;">🎬</td>
+                                <td>Entertainment</td>
+                                <td><span class="category-badge category-entertainment">Preview</span></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.85em;">Edit</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 1.5em;">💡</td>
+                                <td>Bills</td>
+                                <td><span class="category-badge category-bills">Preview</span></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.85em;">Edit</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 1.5em;">🛒</td>
+                                <td>Shopping</td>
+                                <td><span class="category-badge category-shopping">Preview</span></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.85em;">Edit</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-2">
+                    <button class="btn btn-primary">➕ Add New Category</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget Settings -->
+        <div class="card">
+            <div class="card-header">
+                <h2>💰 Budget Settings</h2>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-2">Set monthly budget limits and get alerts</p>
+                
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="monthlyBudget">Monthly Budget ($)</label>
+                            <input type="number" id="monthlyBudget" value="2000" step="0.01">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="alertThreshold">Alert Threshold (%)</label>
+                            <input type="number" id="alertThreshold" value="80" min="0" max="100">
+                            <small class="text-muted">Get notified when spending reaches this percentage</small>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info mb-2">
+                        <strong>💡 Current Status:</strong> You've spent $1,234.56 (62%) of your $2,000 monthly budget. You have $765.44 remaining.
+                    </div>
+
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Category Budgets</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="foodBudget">🍔 Food Budget ($)</label>
+                            <input type="number" id="foodBudget" value="600" step="0.01">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="transportBudget">🚗 Transport Budget ($)</label>
+                            <input type="number" id="transportBudget" value="300" step="0.01">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="entertainmentBudget">🎬 Entertainment Budget ($)</label>
+                            <input type="number" id="entertainmentBudget" value="200" step="0.01">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="billsBudget">💡 Bills Budget ($)</label>
+                            <input type="number" id="billsBudget" value="400" step="0.01">
+                        </div>
+                    </div>
+
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary">💾 Save Budget Settings</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Preferences -->
+        <div class="card">
+            <div class="card-header">
+                <h2>🎨 Preferences</h2>
+            </div>
+            <div class="card-body">
+                <div class="settings-section">
+                    <div class="settings-item">
+                        <div class="setting-label">
+                            <h3>Currency</h3>
+                            <p>Select your preferred currency</p>
+                        </div>
+                        <div class="setting-control">
+                            <select style="padding: 10px; border-radius: 6px; border: 2px solid #e2e8f0;">
+                                <option value="usd" selected>$ USD - US Dollar</option>
+                                <option value="eur">€ EUR - Euro</option>
+                                <option value="gbp">£ GBP - British Pound</option>
+                                <option value="jpy">¥ JPY - Japanese Yen</option>
+                                <option value="cad">$ CAD - Canadian Dollar</option>
+                                <option value="aud">$ AUD - Australian Dollar</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="setting-label">
+                            <h3>Date Format</h3>
+                            <p>Choose how dates are displayed</p>
+                        </div>
+                        <div class="setting-control">
+                            <select style="padding: 10px; border-radius: 6px; border: 2px solid #e2e8f0;">
+                                <option value="mdy" selected>MM/DD/YYYY (US)</option>
+                                <option value="dmy">DD/MM/YYYY (UK/EU)</option>
+                                <option value="ymd">YYYY/MM/DD (ISO)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="setting-label">
+                            <h3>First Day of Week</h3>
+                            <p>Set the first day for weekly reports</p>
+                        </div>
+                        <div class="setting-control">
+                            <select style="padding: 10px; border-radius: 6px; border: 2px solid #e2e8f0;">
+                                <option value="sunday" selected>Sunday</option>
+                                <option value="monday">Monday</option>
+                                <option value="saturday">Saturday</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="setting-label">
+                            <h3>Dark Mode</h3>
+                            <p>Enable dark theme for better night viewing</p>
+                        </div>
+                        <div class="setting-control">
+                            <div class="toggle-switch" onclick="toggleSwitch(this)"></div>
+                        </div>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="setting-label">
+                            <h3>Email Notifications</h3>
+                            <p>Receive weekly expense summaries via email</p>
+                        </div>
+                        <div class="setting-control">
+                            <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                        </div>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="setting-label">
+                            <h3>Budget Alerts</h3>
+                            <p>Get notified when approaching budget limits</p>
+                        </div>
+                        <div class="setting-control">
+                            <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <button class="btn btn-primary">💾 Save Preferences</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Management -->
+        <div class="card">
+            <div class="card-header">
+                <h2>💾 Data Management</h2>
+            </div>
+            <div class="card-body">
+                <div class="settings-section">
+                    <h3 class="mb-2">Export Data</h3>
+                    <p class="text-muted mb-2">Download all your expense data</p>
+                    <div class="btn-group mb-3">
+                        <button class="btn btn-primary">📥 Export All Data (JSON)</button>
+                        <button class="btn btn-success">📊 Export as Excel</button>
+                        <button class="btn btn-secondary">📋 Export as CSV</button>
+                    </div>
+
+                    <h3 class="mb-2" style="margin-top: 30px;">Import Data</h3>
+                    <p class="text-muted mb-2">Import expenses from a file</p>
+                    <div class="form-group" style="max-width: 500px;">
+                        <input type="file" accept=".csv,.json,.xlsx" style="padding: 10px; border: 2px solid #e2e8f0; border-radius: 6px; width: 100%;">
+                    </div>
+                    <button class="btn btn-primary">📤 Import Data</button>
+                </div>
+
+                <hr style="margin: 30px 0; border: none; border-top: 2px solid #e2e8f0;">
+
+                <div class="settings-section">
+                    <h3 class="mb-2">Backup & Restore</h3>
+                    <p class="text-muted mb-2">Create a backup of your data or restore from a previous backup</p>
+                    <div class="btn-group">
+                        <button class="btn btn-success">💾 Create Backup</button>
+                        <button class="btn btn-secondary">♻️ Restore from Backup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="card" style="border: 2px solid #ef4444;">
+            <div class="card-header" style="background: #fee2e2; border-bottom: 2px solid #ef4444;">
+                <h2 style="color: #991b1b;">⚠️ Danger Zone</h2>
+            </div>
+            <div class="card-body">
+                <div class="settings-section">
+                    <div class="settings-item">
+                        <div class="setting-label">
+                            <h3 style="color: #991b1b;">Clear All Expenses</h3>
+                            <p>Permanently delete all expense records. This action cannot be undone!</p>
+                        </div>
+                        <div class="setting-control">
+                            <button class="btn btn-danger">🗑️ Clear All Data</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="setting-label">
+                            <h3 style="color: #991b1b;">Reset Settings</h3>
+                            <p>Reset all settings to default values</p>
+                        </div>
+                        <div class="setting-control">
+                            <button class="btn btn-danger">🔄 Reset to Defaults</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="setting-label">
+                            <h3 style="color: #991b1b;">Delete Account</h3>
+                            <p>Permanently delete your account and all associated data</p>
+                        </div>
+                        <div class="setting-control">
+                            <button class="btn btn-danger">❌ Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About & Support -->
+        <div class="card">
+            <div class="card-header">
+                <h2>ℹ️ About & Support</h2>
+            </div>
+            <div class="card-body">
+                <div class="settings-item">
+                    <div class="setting-label">
+                        <h3>Version</h3>
+                        <p>Expense Tracker v1.0.0</p>
+                    </div>
+                </div>
+                <div class="settings-item">
+                    <div class="setting-label">
+                        <h3>Help & Documentation</h3>
+                        <p>Learn how to use the expense tracker</p>
+                    </div>
+                    <div class="setting-control">
+                        <button class="btn btn-secondary">📚 View Docs</button>
+                    </div>
+                </div>
+                <div class="settings-item">
+                    <div class="setting-label">
+                        <h3>Contact Support</h3>
+                        <p>Get help from our support team</p>
+                    </div>
+                    <div class="setting-control">
+                        <button class="btn btn-secondary">📧 Contact Us</button>
+                    </div>
+                </div>
+                <div class="settings-item">
+                    <div class="setting-label">
+                        <h3>Privacy Policy</h3>
+                        <p>Read our privacy policy and terms</p>
+                    </div>
+                    <div class="setting-control">
+                        <button class="btn btn-secondary">📄 View Policy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu Toggle and Toggle Switches -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        function toggleSwitch(element) {
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

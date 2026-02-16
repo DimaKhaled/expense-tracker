@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Expense Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                💰 Expense Tracker
+            </a>
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="index.html" class="active">🏠 Dashboard</a></li>
+                <li><a href="add-expense.html">➕ Add Expense</a></li>
+                <li><a href="expenses.html">📋 All Expenses</a></li>
+                <li><a href="reports.html">📊 Reports</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>Dashboard</h1>
+            <p>Welcome back! Here's your financial overview.</p>
+        </div>
+
+        <!-- Hero Stat - Total This Month -->
+        <div class="hero-stat">
+            <h2>Total Spending This Month</h2>
+            <div class="amount">$1,234.56</div>
+            <p>February 2026 • 45 transactions</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">💳</div>
+                <div class="stat-label">Total Expenses</div>
+                <div class="stat-value">$1,234.56</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+                <div class="stat-label">This Week</div>
+                <div class="stat-value">$285.40</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-label">Average Per Day</div>
+                <div class="stat-value">$41.15</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-label">Budget Remaining</div>
+                <div class="stat-value">$765.44</div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-grid">
+            <!-- Pie Chart Placeholder -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>📊 Spending by Category</h2>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            <div class="icon">📊</div>
+                            <p>Pie Chart Placeholder</p>
+                            <p class="text-muted">Chart will be added here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Line Chart Placeholder -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>📈 Spending Trend</h2>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            <div class="icon">📈</div>
+                            <p>Line Chart Placeholder</p>
+                            <p class="text-muted">Chart will be added here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Breakdown -->
+        <div class="card">
+            <div class="card-header">
+                <h2>💼 Category Breakdown</h2>
+            </div>
+            <div class="card-body">
+                <ul class="category-list">
+                    <li class="category-item">
+                        <div class="category-info">
+                            <span class="category-icon">🍔</span>
+                            <span class="category-name">Food</span>
+                        </div>
+                        <div>
+                            <span class="category-amount">$450.00</span>
+                            <span class="category-percentage">(36%)</span>
+                        </div>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-info">
+                            <span class="category-icon">🚗</span>
+                            <span class="category-name">Transport</span>
+                        </div>
+                        <div>
+                            <span class="category-amount">$285.50</span>
+                            <span class="category-percentage">(23%)</span>
+                        </div>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-info">
+                            <span class="category-icon">🎬</span>
+                            <span class="category-name">Entertainment</span>
+                        </div>
+                        <div>
+                            <span class="category-amount">$195.00</span>
+                            <span class="category-percentage">(16%)</span>
+                        </div>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-info">
+                            <span class="category-icon">💡</span>
+                            <span class="category-name">Bills</span>
+                        </div>
+                        <div>
+                            <span class="category-amount">$180.06</span>
+                            <span class="category-percentage">(15%)</span>
+                        </div>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-info">
+                            <span class="category-icon">🛒</span>
+                            <span class="category-name">Shopping</span>
+                        </div>
+                        <div>
+                            <span class="category-amount">$124.00</span>
+                            <span class="category-percentage">(10%)</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Recent Expenses -->
+        <div class="card">
+            <div class="card-header">
+                <h2>🕒 Recent Expenses</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th class="hide-mobile">Description</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Feb 16, 2026</td>
+                                <td><span class="category-badge category-food">Food</span></td>
+                                <td class="hide-mobile">Lunch at Italian Restaurant</td>
+                                <td class="amount-negative">-$45.00</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feb 16, 2026</td>
+                                <td><span class="category-badge category-transport">Transport</span></td>
+                                <td class="hide-mobile">Gas Station</td>
+                                <td class="amount-negative">-$55.00</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feb 15, 2026</td>
+                                <td><span class="category-badge category-entertainment">Entertainment</span></td>
+                                <td class="hide-mobile">Movie Tickets</td>
+                                <td class="amount-negative">-$35.00</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feb 15, 2026</td>
+                                <td><span class="category-badge category-food">Food</span></td>
+                                <td class="hide-mobile">Grocery Shopping</td>
+                                <td class="amount-negative">-$125.50</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feb 14, 2026</td>
+                                <td><span class="category-badge category-shopping">Shopping</span></td>
+                                <td class="hide-mobile">New Headphones</td>
+                                <td class="amount-negative">-$89.99</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feb 14, 2026</td>
+                                <td><span class="category-badge category-bills">Bills</span></td>
+                                <td class="hide-mobile">Internet Bill</td>
+                                <td class="amount-negative">-$65.00</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feb 13, 2026</td>
+                                <td><span class="category-badge category-food">Food</span></td>
+                                <td class="hide-mobile">Coffee Shop</td>
+                                <td class="amount-negative">-$8.50</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feb 13, 2026</td>
+                                <td><span class="category-badge category-transport">Transport</span></td>
+                                <td class="hide-mobile">Uber Ride</td>
+                                <td class="amount-negative">-$18.75</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feb 12, 2026</td>
+                                <td><span class="category-badge category-food">Food</span></td>
+                                <td class="hide-mobile">Dinner with Friends</td>
+                                <td class="amount-negative">-$72.00</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feb 12, 2026</td>
+                                <td><span class="category-badge category-entertainment">Entertainment</span></td>
+                                <td class="hide-mobile">Spotify Subscription</td>
+                                <td class="amount-negative">-$9.99</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center mt-2">
+                    <a href="expenses.html" class="btn btn-secondary">View All Expenses</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple JavaScript for Mobile Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
